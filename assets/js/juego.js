@@ -41,9 +41,18 @@ const pedirCarta = () => {
 
     carta = deck.pop();
 
-    console.log(deck);
+    // console.log(deck);
     console.log(carta);//  carta debe de ser de la baraja
     return carta;
 }
 
-pedirCarta();
+const valorCarta = (carta) => {
+
+    const valor = carta.substring(0, carta.length - 1);
+    return (isNaN(valor)) ? 
+        (valor === 'A') ? 11 : 10 
+        : valor * 1;
+}
+
+valor = valorCarta( pedirCarta() );
+console.log({valor});
